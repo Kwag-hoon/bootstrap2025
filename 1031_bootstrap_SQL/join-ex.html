@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회원가입 폼</title>
+
+  <!-- 부트스트랩 css -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- 부트스트랩 아이콘 주소 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- 부트스트랩 js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    body {
+      height: 100vh;
+      background: linear-gradient(25deg, #4816c8, #6265d1, #69a5d9, #58e5df)
+    }
+
+    fieldset {
+      padding: 36px;
+      background: #fff;
+      width: 600px;
+      height: 660px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 12px;
+    }
+
+    div {
+      /* margin: 6px 0; */
+      padding: 6px 0;
+    }
+
+    .flex1 {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .flex1 div {
+      width: 49%;
+    }
+
+    .flex2 {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .flex2 .joinone {
+      width: 60%;
+    }
+  </style>
+</head>
+
+<body>
+  <form name="joinform" method="get/post" action="">
+    <fieldset>
+      <legend>회원가입</legend>
+      <div class="flex1">
+        <div>
+          <label for="name_txt">이름</label>
+          <input type="text" id="name_txt" class="form-control">
+        </div>
+        <div>
+          <label for="nick_txt">별명</label>
+          <input type="text" id="nick_txt" class="form-control">
+        </div>
+      </div>
+      <div>
+        <label for="email_txt">이메일</label>
+        <input type="email" id="email_txt" class="form-control" placeholder="you@example.com">
+      </div>
+      <div>
+        <label for="adress_txt">주소</label>
+        <input type="text" id="adress_txt" class="form-control" placeholder="서울특별시 강남구">
+      </div>
+      <div>
+        <label for="adress_txt">상세주소(필수아님)</label>
+        <input type="text" id="name_txt" class="form-control" placeholder="상세주소를 입력해주세요">
+      </div>
+      <div class="flex2">
+
+        <div class="joinone">
+          <label for="path">가입경로</label>
+          <select name="" id="path" class="form-select" style="height:38px;">
+
+            <option value="">선택</option>
+            <option value="">지인추천</option>
+            <option value="">광고</option>
+            <option value="">기타</option>
+          </select>
+        </div>
+        <div>
+          <label for="code_txt">추천인 코드</label>
+          <input type="text" id="code_txt" class="form-control">
+        </div>
+
+      </div>
+      <div class="form-check text-start my-3">
+        <input type="checkbox" id="id_save" class="form-check-input " value="remember-me">
+        <label for="id_save" class="form-check-label">개인정보 수집 및 이용에 동의 합니다. </label>
+      </div>
+      <div>
+        <input type="submit" value="가입완료" class="btn btn-primary w-100 py-2">
+      </div>
+      <div>
+        <input type="reset" value="가입취소" class="btn btn-dark w-100 py-2">
+      </div>
+
+    </fieldset>
+  </form>
+</body>
+
+</html>

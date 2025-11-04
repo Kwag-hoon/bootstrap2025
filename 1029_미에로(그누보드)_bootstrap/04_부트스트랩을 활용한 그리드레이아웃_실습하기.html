@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04_부트스트랩을 활용한 그리드레이아웃_실습하기</title>
+  <!-- 1. 부트스트랩 css -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" >
+  <!-- 부트스트랩 폰트어썸 아이콘 cdn -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <!-- 2. 부트스트랩 자바스크립트 라이브러리 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" ></script>
+
+  <style>
+    ul,li{
+      list-style: none;
+    }
+    .starbucks *{margin: 0; padding: 0;}
+    .starbucks{
+      width: 100%;
+    }
+     .starbucks img{width: 100%;}
+    .row{
+      max-width: 1200px;
+      margin: 0 auto;
+      border: 2px solid#f00;
+    }
+    div div{
+      border: 3px solid #f00;
+      background: #ccc;
+      height: 100px;
+    }
+    /* 방법1
+      .starbucks에 width:100%; max-width:1200px; 을 설정하여 박스 가운데 정렬
+      방법2
+      .starbucks ul태그에 클래스명 컨테이너 추가하고 margin:0 auto; 설정
+    */
+  </style>
+</head>
+<body>
+  <h2>04_부트스트랩을 활용한 그리드레이아웃_실습하기</h2>
+  <p>12장의 상품 목록을 작성하여 반응형웹 그리드 레이아웃 구현하기</p>
+  <p>pc버전에서 가로 4장씩 배치, tablet해상도에서 3장, 모바일에서 2, 1장씩 배치하기</p>
+  <p>https://getbootstrap.kr/docs/5.0/examples/grid/#containers</p>
+  <article class="starbucks">
+    <h4>상품 목록</h4>
+    <ul class="row container">
+      <li class="col-lg-3 col-md-4 col-6"><img src="./images/starbucks01.jpg" alt=""></li>
+      <li class="col-lg-3 col-md-4 col-6"><img src="./images/starbucks02.jpg" alt=""></li>
+      <li class="col-lg-3 col-md-4 col-6"><img src="./images/starbucks03.jpg" alt=""></li>
+      <li class="col-lg-3 col-md-4 col-6"><img src="./images/starbucks04.jpg" alt=""></li>
+      <li class="col-lg-3 col-md-4 col-6"><img src="./images/starbucks05.jpg" alt=""></li>
+      <li class="col-lg-3 col-md-4 col-6"><img src="./images/starbucks06.jpg" alt=""></li>
+      <li class="col-lg-3 col-md-4 col-6"><img src="./images/starbucks07.jpg" alt=""></li>
+      <li class="col-lg-3 col-md-4 col-6"><img src="./images/starbucks08.jpg" alt=""></li>
+      <li class="col-lg-3 col-md-4 col-6"><img src="./images/starbucks09.jpg" alt=""></li>
+      <li class="col-lg-3 col-md-4 col-6"><img src="./images/starbucks10.jpg" alt=""></li>
+      <li class="col-lg-3 col-md-4 col-6"><img src="./images/starbucks11.jpg" alt=""></li>
+      <li class="col-lg-3 col-md-4 col-6"><img src="./images/starbucks12.jpg" alt=""></li>
+      
+    </ul>
+
+  </article>
+</body>
+</html>

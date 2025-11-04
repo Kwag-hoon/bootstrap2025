@@ -1,0 +1,7 @@
+깃주소
+https://github.com/Kwag-hoon/bootstrap2025.git
+------------------------------------------------------------
+
+1. 처음 작업시
+  1) 전역 구성 설정
+git config --global core.autocrif true

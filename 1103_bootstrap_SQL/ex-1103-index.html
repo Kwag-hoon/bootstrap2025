@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>내 물건 팔기</title>
+  <!-- 부트스트랩 css -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- 부트스트랩 아이콘 주소 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- 부트스트랩 js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+  <style>
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .sell{
+      width: 100%;
+      max-width: 800px;
+      /* height: 100vh; */
+      margin: 0 auto;
+      border: 2px solid #f00;
+      
+
+    }
+    .hidden{display: none;}
+    div{
+      margin-bottom: 12px;
+    }
+    .navwrap{
+      position: relative;
+      border-bottom: 1px solid #aaa;
+       }
+   .navwrap i.bi{font-size: 20px; color: #555;}
+   h3{
+    font-size: 20px;
+    text-align: center;
+   }
+   .navwrap button{
+    position: absolute;
+    right: 0;
+    width: 100px;
+    
+   }
+   .input-group label{
+    padding: 8px 16px 0px;
+    /* display: inline; */
+    /* vertical-align: middle; */
+    text-align: center;
+    border: 1px solid #ccc;
+    /* border-radius: 6px; */
+    cursor: pointer;
+   }
+   .btn-secondary{
+    margin-top: 12px;
+   }
+   .ctn1{
+    margin-bottom: 12px;
+   }
+  </style>
+<body>
+
+  <div class="sell p-4">
+    <div class="navwrap row">
+      <i class="bi bi-x col-4"></i>
+      <h3 class="col-4">내 물건 팔기</h3>
+      <button class="col-4 btn btn-outline-light text-muted">임시 저장</button>
+    </div>
+    <div class="input-group">
+      <label for="upload"><i class="bi bi-camera-fill"></i>
+        <p>0/10</p>
+      </label>
+      <input type="file" id="upload" class="hidden">
+    </div>
+
+    <div class="title">
+      <label for="">제목</label>
+      <input type="text" placeholder="제목" class="form-control">
+    </div>
+    <div class="way">
+      <label for="">거래방식</label>
+
+      <div class="btn-wrap">
+        <input type="button" value="판매하기" class="btn btn-dark rounded-pill">
+        <input type="button" value="나눔하기" class="btn btn-outline-secondary rounded-pill">
+      </div>
+      <input type="text" placeholder="가격을 입력 해 주세요" class="form-control">
+    </div>
+    <div>
+      <input type="checkbox" id="cost" >
+      <label for="cost">가격 제안 받기</label>
+    </div>
+
+    <div>
+      <label for="descrip">자세한 설명</label>
+      <textarea name="" id="descrip" cols="10" rows="3" class="form-control"
+        placeholder="다산동에 올릴 게시글을 작성해 주세요.(판매 금지 물품은 게시가 제한될 수 있어요) 신뢰 할 수 있는 거래를 위해 자세히 적어 주세요. 과학기술정보통신부, 한국인터넷진흥원과 함께해요."></textarea>
+      <div>
+        <input type="button" id="btn2" value="자주 쓰는 문구" class="btn btn-light">
+        <!-- <label for="btn2"></label> -->
+
+      </div>
+
+    </div>
+    <div>
+      <label for="">거래 희망 장소</label>
+      <input type="text" placeholder="위치 추가" class="form-control ctn1">
+      
+    </div>
+    <input type="button" value="보여줄 동네 선택 &gt;" class="reset-btn local-btn mb-3 btn btn-light">
+    <input type="submit" value="작성완료" class="btn btn-danger w-100 py-2">
+
+  </div>
+</body>
+
+</html>

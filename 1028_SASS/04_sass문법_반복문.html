@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04_sass문법_반복문(for, while, each)</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./css/style4.css">
+</head>
+
+<body>
+  <h2>04_sass문법_반복문(while, do while, for)</h2>
+  <ul>
+    <li>for</li>
+    <li>while</li>
+    <li>do while</li>
+  </ul>
+
+  <h3>1. @for 문</h3>
+  <p>@for 키워드는 '스타일을 반복적'으로 출력하는데 사용됩니다. </p>
+  <p>자바스크립트의 for문과 유사합니다. </p>
+  <pre>
+    문법1)
+    through : 종료만큼 반복
+    @for $변수 from 시작 through 종료 {
+      //반복할 내용
+    }
+
+    문법2)
+    to : 종료전까지 반복
+    @for $변수 from 시작 to 종료 {
+      //반복할 내용
+    }
+  </pre>
+  <p>$변수 => #{변수}</p>
+  <p>#{변수}는 코드 어디든지 변수 값을 사용 할 수 있습니다. </p>
+  <p>적용예) $img:unquote('./img/#{$img}'); </p>
+  <p>h1{background-image:url('./img/#{$img};')} </p>
+
+  <h3>@for문 실습 - through</h3>
+  <p>div태그가 가로폭을 50px ~ 250px까지 각각 서식이 적용되게 하기</p>
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+  <div>5</div>
+  <p>through는 마지막번째까지 서식이 적용되고, to는 마지막 바로 전까지만 서식이 적용됨</p>
+
+  <h3>2. @ while</h3>
+  <h3>3. @each</h3>
+
+  <h3>실습예제 - 스타벅스 질문과 답변 목록 반복문을 사용하여 제목은 글자색 '초록', 답변에는 배경색 '회색'을 적용하기</h3>
+
+  <article class="qna">
+    <h3>자주하는 질문</h3>
+    <p><span>스타벅스 모바일 카드</span>에 대한 궁금점이 많으신가요?고객님의 문의사항에 대한 답변을 빠르게 찾으실 수 있습니다.</p>
+
+    <p class="searchbox">
+      <input type="search" id="search">
+      <label for="search">검색</label>
+    </p>
+
+    <dl>
+      <dt>Q. [온라인 스토어] 보낸 선물함이 사라졌는데, 과거에 선물한 이력은 어떻게 확인할 수 있나요? <i class="fas fa-angle-down"></i> </dt>
+      <dd>A. Gift배송하기 서비스에서 ‘배송지 입력’을 기준으로 주문내역이 노출되었던 것과는 달리, 온라인 스토어 서비스에서는 ‘결제’를 기준으로 주문내역이 노출됩니다. 따라서, 과거에 보내신 선물의
+        경우 스타벅스 앱 [Shop > 온라인스토어> 마이페이지 > 주문내역]에서 확인하실 수 있습니다.
+        아울러, 스타벅스 온라인 스토어의 [선물함]에는 다른 사람으로부터 선물 받은 내역만 노출됩니다.
+
+        - 주문내역: 결제한 주문 내역 (구매하기/선물하기)
+        - 선물함: 선물 받은 내역 (선물받기)</dd>
+      <dt>Q. 질문<i class="fas fa-angle-down"></i></dt>
+      <dd>A. 답변</dd>
+      <dt>Q. 질문<i class="fas fa-angle-down"></i></dt>
+      <dd>A. 답변</dd>
+      <dt>Q. 질문<i class="fas fa-angle-down"></i></dt>
+      <dd>A. 답변</dd>
+      <dt>Q. 질문<i class="fas fa-angle-down"></i></dt>
+      <dd>A. 답변</dd>
+      <dt>Q. 질문<i class="fas fa-angle-down"></i></dt>
+      <dd>A. 답변</dd>
+      <dt>Q. 질문<i class="fas fa-angle-down"></i></dt>
+      <dd>A. 답변</dd>
+      <dt>Q. 질문<i class="fas fa-angle-down"></i></dt>
+      <dd>A. 답변</dd>
+      <dt>Q. 질문<i class="fas fa-angle-down"></i></dt>
+      <dd>A. 답변</dd>
+      <dt>Q. 질문<i class="fas fa-angle-down"></i></dt>
+      <dd>A. 답변</dd>
+
+    </dl>
+  </article>
+
+  <!--  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      //1. 변수 선언(제목)
+      let que = $('.qna dt');
+
+      //첫번째 질문에 대한 답변이 보이게
+      $('.qna dt').first().next().show();
+      $('.qna dt').first().find('i.fas').addClass('act');
+
+      // 클릭이벤트
+      $('.qna dt').click(function(){
+        // 선택한 질문 다음 요소를 보이게 하고  다른 답변은 숨긴다. 
+        $(this).next().slideDown().siblings('dd').slideUp();
+        //선택한 질문의 자식요소 i.fas에 act서식을 적용하고 i.fas의 부모요소의 형제요소들 안에서 i.fas를 찾아 act서식을 제거한다. 
+        $(this).find('i.fas').addClass('act').parent().siblings().find('i.fas').removeClass('act');
+      })
+    })
+  </script>
+</body>
+
+</html>
