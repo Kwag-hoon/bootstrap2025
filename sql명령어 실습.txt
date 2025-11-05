@@ -129,7 +129,11 @@ select * from goods where g_name like '%만두%';
 
     select c_name 상호명, c_address 주소 , c_tel 전화번호 from customer where c_address like '%역삼동%';
 
-문4) 
+문4) orders테이블에서 주문수량이 10개이상 주문한 상호명을 중복없이(distinct) 출력하시오. 
+     select c_name 상호명 from orders where o_num>=10;
+
+   select distinct c_name 상호명 from orders where o_num>=10;
+
 
 
 
